@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nauman Ahmed | SEO Expert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:#0a0a0a;color:#f0ead6;overflow-x:hidden;}
+    .gold{color:#c9a84c;}
+
+    /* NAV */
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:1.4rem 3rem;border-bottom:0.5px solid #2a2720;position:sticky;top:0;z-index:100;background:rgba(10,10,10,0.96);backdrop-filter:blur(8px);}
+    .nav-logo{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:1px;color:#c9a84c;}
+    .nav-logo span{color:#3a342c;}
+    .nav-links{display:flex;gap:2rem;}
+    .nav-links a{color:#7a7464;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:#c9a84c;}
+    .nav-cta{background:#c9a84c;color:#0a0a0a;border:none;padding:8px 22px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background 0.2s;text-decoration:none;}
+    .nav-cta:hover{background:#e0bc6a;}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 1fr;min-height:88vh;padding:0 3rem;align-items:center;gap:4rem;border-bottom:0.5px solid #2a2720;position:relative;overflow:hidden;}
+    .hero::before{content:'SEO';position:absolute;right:-1rem;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:26vw;color:#0d0d0b;pointer-events:none;z-index:0;line-height:1;}
+    .hero-left{position:relative;z-index:1;}
+    .hero-tag{display:inline-flex;align-items:center;gap:8px;border:0.5px solid #c9a84c;padding:6px 14px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#c9a84c;margin-bottom:2rem;}
+    .hero-tag::before{content:'';width:6px;height:6px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,72px);line-height:1.05;font-weight:700;margin-bottom:1.5rem;}
+    .hero h1 em{font-style:italic;color:#c9a84c;}
+    .hero-desc{font-size:14px;color:#8a8276;line-height:1.8;max-width:440px;margin-bottom:2.5rem;}
+    .hero-btns{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;}
+    .btn-primary{background:#c9a84c;color:#0a0a0a;padding:13px 30px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:background 0.2s;text-decoration:none;display:inline-block;}
+    .btn-primary:hover{background:#e0bc6a;}
+    .btn-ghost{color:#c9a84c;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;text-decoration:underline;text-underline-offset:4px;background:none;border:none;}
+    .hero-right{position:relative;z-index:1;}
+    .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a2720;}
+    .stat-box{background:#0e0e0e;padding:2.5rem 2rem;transition:background 0.2s;}
+    .stat-box:hover{background:#131310;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:48px;font-weight:700;color:#c9a84c;line-height:1;margin-bottom:0.5rem;}
+    .stat-label{font-size:10px;color:#5a5449;letter-spacing:1.5px;text-transform:uppercase;}
+
+    /* SECTIONS */
+    section{padding:5rem 3rem;border-bottom:0.5px solid #2a2720;}
+    .section-num{font-size:10px;letter-spacing:3px;color:#c9a84c;text-transform:uppercase;margin-bottom:0.75rem;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,46px);font-weight:700;line-height:1.1;}
+
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:#2a2720;margin-top:2.5rem;}
+    .service-card{background:#0e0e0e;padding:2.25rem 1.6rem;transition:background 0.25s;position:relative;overflow:hidden;}
+    .service-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:#c9a84c;transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
+    .service-card:hover{background:#111108;}
+    .service-card:hover::after{transform:scaleX(1);}
+    .service-icon{margin-bottom:1.4rem;}
+    .service-icon svg{width:28px;height:28px;stroke:#c9a84c;fill:none;stroke-width:1.5;}
+    .service-name{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:0.75rem;font-weight:700;line-height:1.3;}
+    .service-desc{font-size:12px;color:#5a5449;line-height:1.65;}
+
+    /* CASE STUDIES */
+    .cases-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#2a2720;margin-top:2.5rem;}
+    .case-card{background:#0e0e0e;padding:2.75rem 2.5rem;transition:background 0.25s;}
+    .case-card:hover{background:#111108;}
+    .case-tag{font-size:10px;letter-spacing:2px;color:#4a4438;text-transform:uppercase;margin-bottom:1.25rem;}
+    .case-title{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:1.5rem;}
+    .case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1a1a17;margin-bottom:1.75rem;}
+    .metric-box{background:#0e0e0e;padding:1.25rem;}
+    .metric-val{font-family:'Playfair Display',serif;font-size:28px;color:#c9a84c;font-weight:700;line-height:1;margin-bottom:0.3rem;}
+    .metric-label{font-size:10px;color:#4a4438;letter-spacing:1px;text-transform:uppercase;}
+    .case-points{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .case-points li{font-size:12px;color:#7a7464;padding-left:1rem;position:relative;}
+    .case-points li::before{content:'→';position:absolute;left:0;color:#c9a84c;}
+
+    /* EXPERIENCE */
+    .exp-layout{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
+    .exp-sidebar{position:sticky;top:100px;}
+    .exp-sidebar p{font-size:13px;color:#7a7464;line-height:1.8;margin-bottom:2rem;}
+    .skill-tag{display:inline-block;border:0.5px solid #2a2720;padding:5px 12px;font-size:10px;letter-spacing:1.5px;color:#7a7464;margin:4px 4px 0 0;text-transform:uppercase;}
+    .exp-list{display:flex;flex-direction:column;}
+    .exp-item{padding:2.5rem 0;border-bottom:0.5px solid #1a1a17;display:grid;grid-template-columns:130px 1fr;gap:2rem;transition:padding-left 0.3s;}
+    .exp-item:hover{padding-left:10px;}
+    .exp-year{font-size:11px;color:#4a4438;letter-spacing:1px;padding-top:4px;text-transform:uppercase;}
+    .exp-role{font-family:'Playfair Display',serif;font-size:19px;margin-bottom:0.4rem;}
+    .exp-co{font-size:12px;color:#c9a84c;margin-bottom:0.75rem;letter-spacing:0.5px;}
+    .exp-detail{font-size:12px;color:#5a5449;line-height:1.7;}
+
+    /* CLIENTS */
+    .clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2720;margin-top:2.5rem;}
+    .client-card{background:#0e0e0e;padding:2.5rem 2rem;transition:background 0.25s;}
+    .client-card:hover{background:#111108;}
+    .client-period{font-size:10px;color:#4a4438;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.75rem;}
+    .client-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:0.5rem;}
+    .client-loc{font-size:11px;color:#c9a84c;margin-bottom:1.25rem;letter-spacing:0.5px;}
+    .client-tags{display:flex;flex-wrap:wrap;gap:6px;}
+    .client-tag{font-size:10px;letter-spacing:1px;padding:3px 9px;background:#1a1a17;color:#7a7464;text-transform:uppercase;}
+
+    /* TOOLS */
+    .tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:2rem;}
+    .tool-item{background:#0e0e0e;border:0.5px solid #2a2720;padding:1.1rem 1.4rem;display:flex;align-items:center;gap:12px;transition:border-color 0.2s;}
+    .tool-item:hover{border-color:#c9a84c;}
+    .tool-dot{width:7px;height:7px;background:#c9a84c;border-radius:50%;flex-shrink:0;}
+    .tool-name{font-size:12px;color:#a09888;}
+
+    /* EDUCATION */
+    .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#2a2720;margin-top:2.5rem;}
+    .edu-card{background:#0e0e0e;padding:2rem 1.75rem;}
+    .edu-year{font-size:10px;color:#4a4438;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:0.75rem;}
+    .edu-degree{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;margin-bottom:0.5rem;}
+    .edu-inst{font-size:12px;color:#c9a84c;}
+
+    /* CONTACT */
+    .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+    .contact-left p{font-size:13px;color:#7a7464;line-height:1.8;margin:1.5rem 0 2rem;}
+    .contact-links{display:flex;flex-direction:column;gap:1rem;}
+    .contact-link{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.5rem;border:0.5px solid #2a2720;font-size:13px;color:#a09888;transition:border-color 0.2s,color 0.2s;text-decoration:none;}
+    .contact-link:hover{border-color:#c9a84c;color:#f0ead6;}
+    .contact-link svg{width:15px;height:15px;stroke:#c9a84c;fill:none;stroke-width:1.5;flex-shrink:0;}
+    .avail-badge{display:inline-flex;align-items:center;gap:8px;border:0.5px solid #c9a84c;padding:8px 16px;font-size:10px;letter-spacing:2px;color:#c9a84c;text-transform:uppercase;margin-bottom:2rem;}
+    .avail-dot{width:6px;height:6px;background:#4caf50;border-radius:50%;animation:pulse 2s infinite;}
+    .quote-block{padding:2rem;background:#0e0e0e;border-left:2px solid #c9a84c;margin-bottom:2rem;}
+    .quote-block p{font-family:'Playfair Display',serif;font-size:19px;line-height:1.5;font-style:italic;}
+    .info-row{display:flex;align-items:center;gap:12px;margin-bottom:1rem;}
+    .info-row svg{width:14px;height:14px;stroke:#c9a84c;fill:none;stroke-width:1.5;flex-shrink:0;}
+
+    footer{padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid #1a1a17;}
+    footer p{font-size:11px;color:#3a342c;letter-spacing:0.5px;}
+
+    @media(max-width:900px){
+      .nav-links{display:none;}
+      .hero{grid-template-columns:1fr;min-height:auto;padding:4rem 1.5rem;}
+      .hero::before{font-size:40vw;opacity:0.5;}
+      section{padding:3.5rem 1.5rem;}
+      .services-grid{grid-template-columns:1fr 1fr;}
+      .cases-grid{grid-template-columns:1fr;}
+      .exp-layout{grid-template-columns:1fr;}
+      .exp-sidebar{position:static;}
+      .clients-grid{grid-template-columns:1fr;}
+      .tools-grid{grid-template-columns:1fr 1fr;}
+      .edu-grid{grid-template-columns:1fr;}
+      .contact-layout{grid-template-columns:1fr;}
+      footer{flex-direction:column;gap:0.5rem;text-align:center;}
+      .nav{padding:1rem 1.5rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">NA<span>.</span></div>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#results">Results</a>
+      <a href="#experience">Experience</a>
+      <a href="#clients">Clients</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="https://www.fiverr.com/" target="_blank">Hire Me on Fiverr</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">Available for New Projects</div>
+      <h1>Nauman<br><em>Ahmed</em></h1>
+      <p class="hero-desc">SEO Specialist with 4+ years of proven experience improving search engine rankings, driving targeted organic traffic, and generating high-quality leads — for service-based businesses, eCommerce, and digital products worldwide.</p>
+      <div class="hero-btns">
+        <a class="btn-primary" href="https://www.fiverr.com/" target="_blank">Hire Me on Fiverr</a>
+        <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Work Directly →</button>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="stats-grid">
+        <div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Years Experience</div></div>
+        <div class="stat-box"><div class="stat-num">7X</div><div class="stat-label">Traffic Growth</div></div>
+        <div class="stat-box"><div class="stat-num">15K+</div><div class="stat-label">Clicks Generated</div></div>
+        <div class="stat-box"><div class="stat-num">5M+</div><div class="stat-label">Impressions</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-num">01 — Services</div>
+    <h2 class="section-title">What I Specialise In</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div class="service-name">Technical SEO</div>
+        <p class="service-desc">Complete site audits, indexing fixes, Core Web Vitals, crawl budget optimisation, XML sitemaps, and schema implementation.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="service-name">On-Page SEO</div>
+        <p class="service-desc">Keyword research, title tags, meta descriptions, heading hierarchy, content optimisation, and internal linking for maximum relevance.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg></div>
+        <div class="service-name">Local SEO</div>
+        <p class="service-desc">Google Business Profile optimisation, local citation building, map pack rankings, and hyper-local content strategies.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <div class="service-name">Schema & JSON-LD</div>
+        <p class="service-desc">FAQPage, LocalBusiness, Article, BreadcrumbList — advanced structured data for rich result eligibility at scale.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+        <div class="service-name">Content Strategy</div>
+        <p class="service-desc">Topical authority mapping, hub-and-spoke architecture, keyword-driven editorial calendars, and content writing for organic growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASE STUDIES -->
+  <section id="results">
+    <div class="section-num">02 — Proven Results</div>
+    <h2 class="section-title">Real Numbers. Real Growth.</h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="case-tag">Case Study 01 — Organic Traffic</div>
+        <div class="case-title">7X Organic Traffic Growth</div>
+        <div class="case-metrics">
+          <div class="metric-box"><div class="metric-val">15.1K</div><div class="metric-label">Total Clicks</div></div>
+          <div class="metric-box"><div class="metric-val">5.38M</div><div class="metric-label">Impressions</div></div>
+          <div class="metric-box"><div class="metric-val">7X</div><div class="metric-label">Traffic Increase</div></div>
+          <div class="metric-box"><div class="metric-val">3mo</div><div class="metric-label">Timeframe</div></div>
+        </div>
+        <ul class="case-points">
+          <li>Full technical SEO audit and fix implementation</li>
+          <li>Comprehensive keyword research and content optimisation</li>
+          <li>Strong upward trend maintained over 3 months</li>
+          <li>Improved crawlability and indexation across the site</li>
+        </ul>
+      </div>
+      <div class="case-card">
+        <div class="case-tag">Case Study 02 — Rankings & Visibility</div>
+        <div class="case-title">Before vs After SEO Growth</div>
+        <div class="case-metrics">
+          <div class="metric-box"><div class="metric-val">673</div><div class="metric-label">Clicks (was 85)</div></div>
+          <div class="metric-box"><div class="metric-val">351K</div><div class="metric-label">Impressions (was 58K)</div></div>
+          <div class="metric-box"><div class="metric-val">14.5</div><div class="metric-label">Avg Position (was 24.6)</div></div>
+          <div class="metric-box"><div class="metric-val">+693%</div><div class="metric-label">Click Growth</div></div>
+        </div>
+        <ul class="case-points">
+          <li>Strategic on-page SEO improvements across key pages</li>
+          <li>Impressions grew from 58K to 351K — 6X increase</li>
+          <li>Average position improved from 24.6 to 14.5</li>
+          <li>Consistent growth curve sustained post-optimisation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="exp-layout">
+      <div class="exp-sidebar">
+        <div class="section-num">03 — Experience</div>
+        <h2 class="section-title" style="margin-bottom:1.5rem;">Career<br>Timeline</h2>
+        <p>From intern to SEO Expert at Accotech — 4 years of hands-on work across service businesses, eCommerce, and digital platforms across UK, Pakistan, and international markets.</p>
+        <div>
+          <span class="skill-tag">Technical SEO</span>
+          <span class="skill-tag">On-Page SEO</span>
+          <span class="skill-tag">Off-Page SEO</span>
+          <span class="skill-tag">Local SEO</span>
+          <span class="skill-tag">Schema Markup</span>
+          <span class="skill-tag">Keyword Research</span>
+          <span class="skill-tag">Content Writing</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Wix CMS</span>
+          <span class="skill-tag">Email Marketing</span>
+          <span class="skill-tag">GHL (GoHighLevel)</span>
+          <span class="skill-tag">Lead Generation</span>
+        </div>
+      </div>
+      <div class="exp-list">
+        <div class="exp-item">
+          <div class="exp-year">04/2022 – Present</div>
+          <div>
+            <div class="exp-role">SEO Expert</div>
+            <div class="exp-co">Accotech — Islamabad, Pakistan</div>
+            <p class="exp-detail">Working as a full-time SEO Expert handling in-house projects and client accounts. Responsibilities span technical audits, on-page optimisation, off-page link building, and content strategy. Also gained hands-on experience with Email Marketing and GoHighLevel (GHL) CRM for lead generation campaigns. Delivered measurable results including 7X organic traffic growth and 15K+ clicks for client websites.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-year">01/2022 – 12/2022</div>
+          <div>
+            <div class="exp-role">SEO Intern</div>
+            <div class="exp-co">On-site — Early Career</div>
+            <p class="exp-detail">Began career in SEO as an on-site intern, building strong foundations in keyword research, on-page optimisation, metadata structuring, and WordPress SEO basics. Developed a data-driven approach to content and technical fixes from day one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENT PROJECTS -->
+  <section id="clients">
+    <div class="section-num">04 — Client Projects</div>
+    <h2 class="section-title">Who I've Worked With</h2>
+    <div class="clients-grid">
+      <div class="client-card">
+        <div class="client-period">11/2025 – Present</div>
+        <div class="client-name">Right Choice Consulting</div>
+        <div class="client-loc">United Kingdom</div>
+        <div class="client-tags">
+          <span class="client-tag">On-Page SEO</span>
+          <span class="client-tag">Off-Page SEO</span>
+          <span class="client-tag">Keyword Research</span>
+          <span class="client-tag">Technical SEO</span>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="client-period">03/2025 – Present</div>
+        <div class="client-name">Elegance Dry Cleaners</div>
+        <div class="client-loc">Active Client</div>
+        <div class="client-tags">
+          <span class="client-tag">WordPress Design</span>
+          <span class="client-tag">On-Page SEO</span>
+          <span class="client-tag">Technical SEO</span>
+          <span class="client-tag">Lead Generation</span>
+        </div>
+      </div>
+      <div class="client-card">
+        <div class="client-period">01/2023 – Present</div>
+        <div class="client-name">CruseBurke</div>
+        <div class="client-loc">Long-term Client</div>
+        <div class="client-tags">
+          <span class="client-tag">Technical SEO</span>
+          <span class="client-tag">Off-Page SEO</span>
+          <span class="client-tag">On-Page SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOOLS -->
+  <section>
+    <div class="section-num">05 — Toolkit</div>
+    <h2 class="section-title">Tools I Work With</h2>
+    <div class="tools-grid">
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Google Search Console</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Google Analytics 4</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Ahrefs</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">SEMrush</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Screaming Frog</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">PageSpeed Insights</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Rank Math / Yoast SEO</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Schema Markup Validator</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">WordPress</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Wix CMS</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">GoHighLevel (GHL)</span></div>
+      <div class="tool-item"><div class="tool-dot"></div><span class="tool-name">Google Rich Results Test</span></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <div class="section-num">06 — Education</div>
+    <h2 class="section-title">Academic Background</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-year">07/2017 – 07/2021</div>
+        <div class="edu-degree">BS Software Engineering</div>
+        <div class="edu-inst">University of Sargodha</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">06/2015 – 06/2017</div>
+        <div class="edu-degree">FSC Pre-Engineering</div>
+        <div class="edu-inst">Karak</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-year">03/2013 – 04/2015</div>
+        <div class="edu-degree">Matriculation</div>
+        <div class="edu-inst">Kohat</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-left">
+        <div class="section-num">07 — Contact</div>
+        <h2 class="section-title">Let's Work<br>Together</h2>
+        <p>Whether you need a full SEO audit, on-page optimisation, a structured data overhaul, or a long-term organic growth partner — I'm available for Fiverr projects and direct business engagements worldwide.</p>
+        <div class="contact-links">
+          <a class="contact-link" href="mailto:nomanomiktk20@gmail.com">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            nomanomiktk20@gmail.com
+          </a>
+          <a class="contact-link" href="tel:+923439602368">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.89a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+            +92 343 960 2368
+          </a>
+          <a class="contact-link" href="https://www.fiverr.com/" target="_blank">
+            <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Hire Me on Fiverr
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="avail-badge"><div class="avail-dot"></div>Open to New Projects</div>
+        <div class="quote-block">
+          <p>"I don't just optimise for search engines — I build organic growth systems that compound over time."</p>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span style="font-size:13px;color:#5a5449;">Giga Mall, Rawalpindi, Pakistan — working remotely worldwide</span>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 1 0 20M2 12h20"/></svg>
+          <span style="font-size:13px;color:#5a5449;">Languages: English · Urdu · Pushto — all at full professional proficiency</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Nauman Ahmed · SEO Expert</p>
+    <p>Built with precision. Ranked with purpose.</p>
+  </footer>
+
+</body>
+</html>
